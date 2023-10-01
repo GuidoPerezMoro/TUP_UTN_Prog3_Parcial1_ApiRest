@@ -1,12 +1,12 @@
 package prog3.apirest.entities;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 @Entity
 @Data
@@ -23,5 +23,8 @@ public class Libro extends BaseEntidad{
     private int fecha;
     @Column(name = "paginas")
     private int paginas;
+
+    @ManyToMany(cascade = CascadeType.REFRESH)
+    private List<Autor> autores;
 
 }

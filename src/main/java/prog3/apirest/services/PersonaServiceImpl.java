@@ -7,7 +7,7 @@ import prog3.apirest.repositories.BaseRepository;
 import prog3.apirest.repositories.PersonaRepository;
 
 @Service
-public class PersonaServiceImpl extends BaseServiceImpl<Persona, Long> implements PersonaService{
+public class PersonaServiceImpl extends BaseServiceImpl<Persona, Long> implements PersonaService {
     @Autowired
     private PersonaRepository personaRepository;
 

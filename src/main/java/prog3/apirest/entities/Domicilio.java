@@ -1,8 +1,6 @@
 package prog3.apirest.entities;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -19,4 +17,8 @@ public class Domicilio extends BaseEntidad{
     private String calle;
     @Column(name = "numero")
     private int numero;
+
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "localidad_id")
+    private Localidad localidad;
 }
