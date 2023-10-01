@@ -1,12 +1,14 @@
 package prog3.apirest.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import prog3.apirest.entities.Localidad;
 import prog3.apirest.repositories.BaseRepository;
 import prog3.apirest.repositories.LocalidadRepository;
 
 import java.util.List;
 
+@Service
 public class LocalidadServiceImpl extends BaseServiceImpl<Localidad, Long> implements LocalidadService {
     @Autowired
     private LocalidadRepository localidadRepository;

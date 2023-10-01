@@ -39,11 +39,11 @@ public abstract class BaseControllerImpl<E extends BaseEntidad, S extends BaseSe
     }
 
     @PutMapping("/{id}") //URI
-    public ResponseEntity<?> update(@PathVariable Long id, @RequestBody E entity) {
+    public ResponseEntity<?> update(@RequestBody E entity, @PathVariable Long id) {
         try {
-            return ResponseEntity.status(HttpStatus.OK).body(service.update(id, entity));
+            return ResponseEntity.status(HttpStatus.OK).body(service.update(entity, id));
         } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("{\"error\":\"Error, por favor intente mas tarde.\"}");
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("{\"error\":\"Error. No se pudo actualizar. Por favor intente mas tarde.\"}");
         }
     }
 

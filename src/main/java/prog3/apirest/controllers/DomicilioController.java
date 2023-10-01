@@ -8,6 +8,6 @@ import prog3.apirest.services.DomicilioServiceImpl;
 
 @Controller
 @CrossOrigin(origins = "*")
-@RequestMapping(path = "api/v1/personas") //URI
+@RequestMapping(path = "api/v1/domicilios") //URI
 public class DomicilioController extends BaseControllerImpl<Domicilio, DomicilioServiceImpl> {
 }

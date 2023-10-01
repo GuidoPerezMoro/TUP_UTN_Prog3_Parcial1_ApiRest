@@ -10,7 +10,9 @@ import prog3.apirest.repositories.BaseRepository;
 public class AutorServiceImpl extends BaseServiceImpl<Autor,Long> implements AutorService{
     @Autowired
     private AutorRepository autorRepository;
-    public AutorServiceImpl(BaseRepository<Autor, Long> baseRepository) {
+
+    public AutorServiceImpl(BaseRepository<Autor, Long> baseRepository, AutorRepository autorRepository) {
         super(baseRepository);
+        this.autorRepository = autorRepository;
     }
 }

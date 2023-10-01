@@ -8,6 +8,6 @@ import prog3.apirest.services.LocalidadServiceImpl;
 
 @Controller
 @CrossOrigin(origins = "*")
-@RequestMapping(path = "api/v1/personas") //URI
+@RequestMapping(path = "api/v1/localidades") //URI
 public class LocalidadController extends BaseControllerImpl<Localidad, LocalidadServiceImpl> {
 }

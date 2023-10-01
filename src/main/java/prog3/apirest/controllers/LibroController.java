@@ -8,6 +8,6 @@ import prog3.apirest.services.LibroServiceImpl;
 
 @Controller
 @CrossOrigin(origins = "*")
-@RequestMapping(path = "api/v1/personas") //URI
+@RequestMapping(path = "api/v1/libros") //URI
 public class LibroController extends BaseControllerImpl<Libro, LibroServiceImpl> {
 }

@@ -9,6 +9,6 @@ public interface BaseService<E extends BaseEntidad, ID extends Serializable> {
     public List<E> findAll() throws Exception; //GET
     public E findById(ID id) throws Exception; //GET
     public E save(E entity) throws Exception; //POST
-    public E update(ID id, E entity) throws Exception; //PUT
+    public E update(E entity, ID id) throws Exception; //PUT
     public boolean delete(ID id) throws Exception; //DELETE
 }
