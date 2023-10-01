@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Table(name = "persona")
+@Table(name = "autor")
 public class Autor extends BaseEntidad{
     @Column(name = "nombre")
     private String nombre;
