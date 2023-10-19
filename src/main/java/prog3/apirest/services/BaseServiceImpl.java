@@ -1,8 +1,10 @@
 package prog3.apirest.services;
 
-import jakarta.transaction.Transactional;
 import prog3.apirest.entities.BaseEntidad;
 import prog3.apirest.repositories.BaseRepository;
+import jakarta.transaction.Transactional;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 import java.io.Serializable;
 import java.util.List;
@@ -16,10 +18,21 @@ public abstract class BaseServiceImpl<E extends BaseEntidad, ID extends Serializ
     }
 
     @Override
-    @Transactional //Evita errores por si se corta la luz, entre otras cosas
-    public List<E> findAll() throws Exception {
+    @Transactional //Evita errores por si se corta la conexión, entre otras cosas
+    public List<E> findALL() throws Exception {
         try {
             List<E> entities = baseRepository.findAll();
+            return entities;
+        } catch (Exception e){
+            throw new Exception(e.getMessage());
+        }
+    }
+
+    @Override
+    @Transactional
+    public Page<E> findALL(Pageable pageable) throws Exception { //Paginación
+        try {
+            Page<E> entities = baseRepository.findAll(pageable);
             return entities;
         } catch (Exception e){
             throw new Exception(e.getMessage());
